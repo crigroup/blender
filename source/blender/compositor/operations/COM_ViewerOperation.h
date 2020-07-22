@@ -53,9 +53,11 @@ class ViewerOperation : public NodeOperation {
   void executeRegion(rcti *rect, unsigned int tileNumber);
   bool isOutputOperation(bool /*rendering*/) const
   {
-    if (G.background) {
+    /* Allow rendering of viewer nodes in background mode
+     * https://blender.stackexchange.com/a/81239
+     * if (G.background) {
       return false;
-    }
+    }*/
     return isActiveViewerOutput();
   }
   void setImage(Image *image)

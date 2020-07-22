@@ -45,7 +45,11 @@ class PreviewOperation : public NodeOperation {
 
   bool isOutputOperation(bool /*rendering*/) const
   {
+    /* Allow rendering of viewer node in background mode
+     * https://blender.stackexchange.com/a/81239
     return !G.background;
+    */
+    return true;
   }
   void initExecution();
   void deinitExecution();
